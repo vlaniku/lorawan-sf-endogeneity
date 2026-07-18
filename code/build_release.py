@@ -106,7 +106,7 @@ def main():
     # ---------- code ----------
     for s in ['measured_link_model.py', 'pilot_leverage_check.py', 'full_replay.py',
               'ppo_crosscheck.py', 'fig5_freshness_sweep.py', 'loed_replication.py',
-              'loed_network_split.py', 'fleet_metrics_analysis.py',
+              'loed_network_split.py', 'fleet_metrics_analysis.py', 'regen_figs.py',
               'run_full_program.sh', 'run_more_seeds.sh', 'build_release.py']:
         shutil.copy(os.path.join(HERE, s), os.path.join(REL, 'code', s))
     for s in ['isac_system_model.py', 'nsga3_optimizer.py', 'drl_agent.py']:
