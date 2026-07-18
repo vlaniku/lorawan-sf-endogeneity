@@ -1,0 +1,163 @@
+{
+  "s0_idealized_indep_icc0.61": {
+    "live_nominal_action": 4,
+    "live_modal_action": 4,
+    "proxy_action": 4,
+    "n_solutions": 15,
+    "dpower_live_vs_proxy_dBm": 0.0
+  },
+  "s0_measured_indep_icc0.61": {
+    "live_nominal_action": 10,
+    "live_modal_action": 10,
+    "proxy_action": 10,
+    "n_solutions": 18,
+    "dpower_live_vs_proxy_dBm": 0.0
+  },
+  "s0_measured_distcorr_icc0.61": {
+    "live_nominal_action": 8,
+    "live_modal_action": 8,
+    "proxy_action": 8,
+    "n_solutions": 16,
+    "dpower_live_vs_proxy_dBm": 0.0
+  },
+  "s0_X_under_livePPO_indep": {
+    "dpower_dBm": 6.34,
+    "fleet_rank_shift_R": 0.75
+  },
+  "s0_X_under_livePPO_distcorr": {
+    "dpower_dBm": 6.65,
+    "fleet_rank_shift_R": 0.73
+  },
+  "s1_idealized_indep_icc0.61": {
+    "live_nominal_action": 11,
+    "live_modal_action": 11,
+    "proxy_action": 11,
+    "n_solutions": 15,
+    "dpower_live_vs_proxy_dBm": 0.0
+  },
+  "s1_measured_indep_icc0.61": {
+    "live_nominal_action": 4,
+    "live_modal_action": 4,
+    "proxy_action": 4,
+    "n_solutions": 12,
+    "dpower_live_vs_proxy_dBm": 0.0
+  },
+  "s1_measured_distcorr_icc0.61": {
+    "live_nominal_action": 14,
+    "live_modal_action": 14,
+    "proxy_action": 9,
+    "n_solutions": 15,
+    "dpower_live_vs_proxy_dBm": 5.248
+  },
+  "s1_X_under_livePPO_indep": {
+    "dpower_dBm": 6.84,
+    "fleet_rank_shift_R": 0.77
+  },
+  "s1_X_under_livePPO_distcorr": {
+    "dpower_dBm": 6.4,
+    "fleet_rank_shift_R": 0.78
+  },
+  "s2_idealized_indep_icc0.61": {
+    "live_nominal_action": 4,
+    "live_modal_action": 4,
+    "proxy_action": 4,
+    "n_solutions": 19,
+    "dpower_live_vs_proxy_dBm": 0.0
+  },
+  "s2_measured_indep_icc0.61": {
+    "live_nominal_action": 5,
+    "live_modal_action": 5,
+    "proxy_action": 1,
+    "n_solutions": 11,
+    "dpower_live_vs_proxy_dBm": 5.88
+  },
+  "s2_measured_distcorr_icc0.61": {
+    "live_nominal_action": 6,
+    "live_modal_action": 6,
+    "proxy_action": 6,
+    "n_solutions": 10,
+    "dpower_live_vs_proxy_dBm": 0.0
+  },
+  "s2_X_under_livePPO_indep": {
+    "dpower_dBm": 7.69,
+    "fleet_rank_shift_R": 0.78
+  },
+  "s2_X_under_livePPO_distcorr": {
+    "dpower_dBm": 6.7,
+    "fleet_rank_shift_R": 0.79
+  },
+  "s3_idealized_indep_icc0.61": {
+    "live_nominal_action": 3,
+    "live_modal_action": 3,
+    "proxy_action": 12,
+    "n_solutions": 18,
+    "dpower_live_vs_proxy_dBm": 5.712
+  },
+  "s3_measured_indep_icc0.61": {
+    "live_nominal_action": 4,
+    "live_modal_action": 4,
+    "proxy_action": 4,
+    "n_solutions": 15,
+    "dpower_live_vs_proxy_dBm": 0.0
+  },
+  "s3_measured_distcorr_icc0.61": {
+    "live_nominal_action": 1,
+    "live_modal_action": 1,
+    "proxy_action": 8,
+    "n_solutions": 13,
+    "dpower_live_vs_proxy_dBm": 4.995
+  },
+  "s3_X_under_livePPO_indep": {
+    "dpower_dBm": 7.14,
+    "fleet_rank_shift_R": 0.73
+  },
+  "s3_X_under_livePPO_distcorr": {
+    "dpower_dBm": 5.83,
+    "fleet_rank_shift_R": 0.68
+  },
+  "s4_idealized_indep_icc0.61": {
+    "live_nominal_action": 7,
+    "live_modal_action": 7,
+    "proxy_action": 0,
+    "n_solutions": 9,
+    "dpower_live_vs_proxy_dBm": 3.959
+  },
+  "s4_measured_indep_icc0.61": {
+    "live_nominal_action": 16,
+    "live_modal_action": 16,
+    "proxy_action": 16,
+    "n_solutions": 18,
+    "dpower_live_vs_proxy_dBm": 0.0
+  },
+  "s4_measured_distcorr_icc0.61": {
+    "live_nominal_action": 2,
+    "live_modal_action": 2,
+    "proxy_action": 8,
+    "n_solutions": 14,
+    "dpower_live_vs_proxy_dBm": 6.39
+  },
+  "s4_X_under_livePPO_indep": {
+    "dpower_dBm": 7.2,
+    "fleet_rank_shift_R": 0.79
+  },
+  "s4_X_under_livePPO_distcorr": {
+    "dpower_dBm": 7.42,
+    "fleet_rank_shift_R": 0.81
+  },
+  "SUMMARY": {
+    "live_picks_same_solution_as_proxy": "9/15",
+    "mean_dpower_live_vs_proxy_dBm": 2.146,
+    "X_under_live_PPO": {
+      "indep": {
+        "dpower_dBm": 7.04,
+        "R": 0.76,
+        "n": 5
+      },
+      "distcorr": {
+        "dpower_dBm": 6.6,
+        "R": 0.76,
+        "n": 5
+      }
+    }
+  }
+}

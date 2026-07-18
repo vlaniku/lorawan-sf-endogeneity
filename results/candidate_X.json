@@ -1,0 +1,236 @@
+{
+  "core": {
+    "indep/energy": {
+      "dpower_dBm": 6.74,
+      "dbw": 0.0024,
+      "fleet_rank_shift_R": 0.77,
+      "tau_full": 0.07,
+      "tau_resolvable": 0.06,
+      "n_seeds": 10
+    },
+    "indep/drl": {
+      "dpower_dBm": 6.79,
+      "dbw": 0.0023,
+      "fleet_rank_shift_R": 0.77,
+      "tau_full": 0.06,
+      "tau_resolvable": 0.04,
+      "n_seeds": 10
+    },
+    "distcorr/energy": {
+      "dpower_dBm": 6.74,
+      "dbw": 0.0023,
+      "fleet_rank_shift_R": 0.76,
+      "tau_full": 0.06,
+      "tau_resolvable": 0.1,
+      "n_seeds": 10
+    },
+    "distcorr/drl": {
+      "dpower_dBm": 6.71,
+      "dbw": 0.0022,
+      "fleet_rank_shift_R": 0.75,
+      "tau_full": 0.07,
+      "tau_resolvable": 0.08,
+      "n_seeds": 10
+    }
+  },
+  "third_leg": {
+    "indep/energy": {
+      "E_blind_under_truth": 0.06023,
+      "E_aware_under_truth": 0.04234,
+      "energy_recovered_frac": 0.212,
+      "energy_recovered_frac_per_seed": [
+        -0.04,
+        -0.162,
+        0.374,
+        0.29,
+        0.197,
+        0.352,
+        0.27,
+        0.123,
+        0.121,
+        0.593
+      ],
+      "n_seeds": 10
+    },
+    "indep/drl": {
+      "E_blind_under_truth": 0.05219,
+      "E_aware_under_truth": 0.04373,
+      "energy_recovered_frac": 0.129,
+      "energy_recovered_frac_per_seed": [
+        0.128,
+        -0.72,
+        0.361,
+        0.139,
+        0.197,
+        0.584,
+        0.199,
+        0.123,
+        0.227,
+        0.05
+      ],
+      "n_seeds": 10
+    }
+  },
+  "freshness_sweep": {
+    "indep/energy/r=0.00": {
+      "recovered_of_blind": -0.147,
+      "recovered_of_blind_per_seed": [
+        0.248,
+        -0.408,
+        0.126,
+        -0.15,
+        -0.537,
+        0.276,
+        -0.334,
+        -1.519,
+        0.192,
+        0.635
+      ],
+      "n_seeds": 10
+    },
+    "indep/energy/r=0.20": {
+      "recovered_of_blind": -0.073,
+      "recovered_of_blind_per_seed": [
+        0.192,
+        -0.065,
+        0.355,
+        0.164,
+        -0.107,
+        0.35,
+        -0.07,
+        -2.246,
+        0.092,
+        0.607
+      ],
+      "n_seeds": 10
+    },
+    "indep/energy/r=0.46": {
+      "recovered_of_blind": 0.189,
+      "recovered_of_blind_per_seed": [
+        0.191,
+        0.177,
+        0.327,
+        0.182,
+        0.15,
+        0.433,
+        -0.147,
+        0.124,
+        0.08,
+        0.374
+      ],
+      "n_seeds": 10
+    },
+    "indep/energy/r=0.70": {
+      "recovered_of_blind": 0.028,
+      "recovered_of_blind_per_seed": [
+        -0.116,
+        -0.209,
+        0.361,
+        0.334,
+        -0.224,
+        0.524,
+        0.206,
+        -0.132,
+        0.161,
+        -0.627
+      ],
+      "n_seeds": 10
+    },
+    "indep/energy/r=0.90": {
+      "recovered_of_blind": 0.199,
+      "recovered_of_blind_per_seed": [
+        0.252,
+        -0.281,
+        0.353,
+        0.122,
+        0.179,
+        0.419,
+        0.266,
+        0.012,
+        0.102,
+        0.565
+      ],
+      "n_seeds": 10
+    },
+    "indep/drl/r=0.00": {
+      "recovered_of_blind": -0.134,
+      "recovered_of_blind_per_seed": [
+        0.246,
+        -0.95,
+        0.11,
+        -0.436,
+        -0.438,
+        0.535,
+        -0.465,
+        -0.09,
+        -0.063,
+        0.213
+      ],
+      "n_seeds": 10
+    },
+    "indep/drl/r=0.20": {
+      "recovered_of_blind": -0.03,
+      "recovered_of_blind_per_seed": [
+        0.192,
+        -0.374,
+        0.343,
+        -0.569,
+        -0.059,
+        0.582,
+        -0.175,
+        -0.333,
+        0.01,
+        0.083
+      ],
+      "n_seeds": 10
+    },
+    "indep/drl/r=0.46": {
+      "recovered_of_blind": 0.075,
+      "recovered_of_blind_per_seed": [
+        0.191,
+        0.079,
+        0.315,
+        -0.252,
+        0.1,
+        0.636,
+        -0.248,
+        0.124,
+        -0.021,
+        -0.175
+      ],
+      "n_seeds": 10
+    },
+    "indep/drl/r=0.70": {
+      "recovered_of_blind": -0.105,
+      "recovered_of_blind_per_seed": [
+        0.259,
+        0.086,
+        0.232,
+        0.164,
+        0.187,
+        0.694,
+        0.128,
+        -0.132,
+        0.13,
+        -2.796
+      ],
+      "n_seeds": 10
+    },
+    "indep/drl/r=0.90": {
+      "recovered_of_blind": 0.025,
+      "recovered_of_blind_per_seed": [
+        0.252,
+        -0.281,
+        0.15,
+        -0.064,
+        0.236,
+        0.627,
+        0.194,
+        0.012,
+        0.042,
+        -0.918
+      ],
+      "n_seeds": 10
+    }
+  }
+}
