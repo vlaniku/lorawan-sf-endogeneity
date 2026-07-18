@@ -18,7 +18,8 @@ The gap between them, propagated through the allocator, is **X** (the cross-devi
 
 ## 2. The headline (the falsification)
 
-Fleet-wide, **SF explains η² = 0.026 of SNR-margin variance** (95% CI 1.4–5.3%). Out of sample, the idealized SF-only map (RMSE 3.56 dB) is **no better than guessing the grand mean** (3.67 dB). As a channel-state proxy — the role allocators give it — SF carries essentially nothing. See `fig1_margin_by_sf.png` and `fig4_holdout_rmse.png`.
+Fleet-wide, **SF explains η² = 0.026 of SNR-margin variance** (95% CI 1.4–5.3%). Out of sample, the idealized SF-only map (RMSE 3.56 dB) is **no better than guessing the grand mean** (3.67 dB).
+*(Protocol note, added 2026-07-19: these original hold-out numbers came from an unspecified split. The paper's final, protocol-explicit recompute — grouped-by-device 10-fold — gives SF-only 3.94 vs grand mean 3.92 dB (same conclusion, cleaner), with device-baseline 3.83 dB under a within-device random split and 3.96 dB under a temporal split; the recompute supersedes these figures.)* As a channel-state proxy — the role allocators give it — SF carries essentially nothing. See `fig1_margin_by_sf.png` and `fig4_holdout_rmse.png`.
 
 ## 3. The mechanism (why the proxy fails — the keystone)
 

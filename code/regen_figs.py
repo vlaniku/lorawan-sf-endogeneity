@@ -81,14 +81,14 @@ ax.set_xlabel('Spreading factor'); ax.set_ylabel('SNR margin (dB)')
 ax.legend(loc='upper left', framealpha=0.95)
 fig.tight_layout(); fig.savefig(os.path.join(HERE, 'fig3_idealized_vs_measured.png')); plt.close(fig)
 
-# ---- fig4: hold-out RMSE ----
-h = P['holdout_rmse_db']
-names = ['SF-only map\n(idealized)', 'grand mean', '+ device\nbaseline']
-vals = [h['idealized_sf_only'], h['grand_mean'], h['device_baseline']]
-fig, ax = plt.subplots(figsize=(6.4, 4.2))
-bars = ax.bar(names, vals, color=[RED, '0.55', BLUE], width=0.62)
+# ---- fig4: hold-out RMSE (protocol-explicit; values from holdout recompute 2026-07-19) ----
+names = ['SF-only map\n(new devices)', 'grand mean\n(new devices)', 'device baseline\n(fresh)', 'device baseline\n(stale)']
+vals = [3.94, 3.92, 3.83, 3.96]
+fig, ax = plt.subplots(figsize=(6.8, 4.2))
+bars = ax.bar(names, vals, color=[RED, '0.55', BLUE, '#9db9cd'], width=0.62)
+bars[3].set_hatch('//'); bars[3].set_edgecolor('white')
 for b, v in zip(bars, vals):
-    ax.text(b.get_x() + b.get_width()/2, v + 0.05, f'{v:.2f}', ha='center', fontsize=15)
-ax.set_ylabel('hold-out RMSE (dB)'); ax.set_ylim(0, max(vals)*1.16)
+    ax.text(b.get_x() + b.get_width()/2, v + 0.03, f'{v:.2f}', ha='center', fontsize=15)
+ax.set_ylabel('hold-out RMSE (dB)'); ax.set_ylim(3.0, 4.25)
 fig.tight_layout(); fig.savefig(os.path.join(HERE, 'fig4_holdout_rmse.png')); plt.close(fig)
 print('figs 1-4 regenerated')
