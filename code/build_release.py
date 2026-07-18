@@ -78,18 +78,44 @@ def main():
     params['device_baselines'] = {k: round(v, 4) for k, v in sorted(base.items())}
     json.dump(params, open(os.path.join(REL, 'data', 'measured_link_params.json'), 'w'), indent=2)
 
+    # ---------- full-fleet daily link metrics (added with RWSCP permission) ----------
+    # Pseudonyms: analyzed devices keep D01..D59 (consistent with readings CSV);
+    # remaining base-app devices continue D60..; Tophane devices get T0001.. .
+    fleet_path = os.path.join(ROOT, 'external_data', 'rwscp_daily_link_metrics.json')
+    if os.path.exists(fleet_path):
+        fleet = json.load(open(fleet_path, encoding='utf-8'))
+        fmap = dict(pseud)                                     # existing D01..D59 by dev_eui
+        base_rest = sorted(x['eui'] for x in fleet['devices']
+                           if x['zone'] == 'base' and x['eui'] not in fmap)
+        for i, e in enumerate(base_rest):
+            fmap[e] = f'D{len(pseud) + i + 1:02d}'
+        toph = sorted(x['eui'] for x in fleet['devices'] if x['zone'] == 'tophane')
+        for i, e in enumerate(toph):
+            fmap[e] = f'T{i + 1:04d}'
+        out_devices = []
+        for x in sorted(fleet['devices'], key=lambda x: fmap[x['eui']]):
+            out_devices.append({'device': fmap[x['eui']], 'zone': x['zone'],
+                                'profile': x['profile'], 'days': x['days']})
+        json.dump({'exported': fleet['exported'], 'source': fleet['source'],
+                   'fields': fleet['fields'], 'devices': out_devices},
+                  open(os.path.join(REL, 'data', 'fleet_daily_link_metrics.json'), 'w'))
+        with open(os.path.join(ROOT, 'private_pseudonym_map.csv'), 'w', newline='') as f:
+            w = csv.writer(f); w.writerow(['dev_eui', 'pseudonym'])
+            for e, p in sorted(fmap.items(), key=lambda kv: kv[1]): w.writerow([e, p])
+
     # ---------- code ----------
     for s in ['measured_link_model.py', 'pilot_leverage_check.py', 'full_replay.py',
               'ppo_crosscheck.py', 'fig5_freshness_sweep.py', 'loed_replication.py',
-              'loed_network_split.py', 'run_full_program.sh', 'run_more_seeds.sh',
-              'build_release.py']:
+              'loed_network_split.py', 'fleet_metrics_analysis.py',
+              'run_full_program.sh', 'run_more_seeds.sh', 'build_release.py']:
         shutil.copy(os.path.join(HERE, s), os.path.join(REL, 'code', s))
     for s in ['isac_system_model.py', 'nsga3_optimizer.py', 'drl_agent.py']:
         shutil.copy(os.path.join(HERE, s), os.path.join(REL, 'code', 'allocator', s))
 
     # ---------- results ----------
-    for s in ['loed_replication_results.json']:
-        shutil.copy(os.path.join(HERE, s), os.path.join(REL, 'results', s))
+    for s in ['loed_replication_results.json', 'drift_curve.json']:
+        if os.path.exists(os.path.join(HERE, s)):
+            shutil.copy(os.path.join(HERE, s), os.path.join(REL, 'results', s))
     for s in ['candidate_X.json', 'ppo_crosscheck.json']:
         shutil.copy(os.path.join(HERE, 'replay_cache', s), os.path.join(REL, 'results', s))
     with zipfile.ZipFile(os.path.join(REL, 'results', 'replay_cache.zip'), 'w',
@@ -141,6 +167,14 @@ Journal, 2026).
   baseline (BLUP).
 - `data/measured_link_params.json` — all fitted link-model parameters
   (SF fixed effects, ICC, variances, hold-out RMSEs), device keys pseudonymized.
+- `data/fleet_daily_link_metrics.json` — daily aggregated link metrics (rx packets,
+  mean SNR/RSSI, packets per data rate) for the full 2,033-device fleet, May–July
+  2026, harvested from the network server with RWSCP's permission. Devices D01–D59
+  are the analyzed meters (same pseudonyms as the readings CSV); D60+ are the
+  remaining first-vendor devices; T0001+ are the second-vendor (device-side-ADR)
+  expansion. Supports the within-deployment natural experiment and the
+  calendar-time drift curve (`code/fleet_metrics_analysis.py`,
+  `results/drift_curve.json`).
 - `code/` — analysis pipeline: measured link model, pre-registered replay
   apparatus (`full_replay.py`), pilot gates, live-PPO cross-check, LoED external
   replication, figure scripts. `code/allocator/` is the vehicle allocator
@@ -172,7 +206,7 @@ Journal, 2026).
 Python 3.12; `pip install -r requirements.txt`.
 
 ## License
-Code: MIT. Derived data: CC BY 4.0.  <!-- TODO(authors): confirm before publishing -->
+Code: MIT. Derived data: CC BY 4.0.
 
 ## Contact
 Vullnet Laniku, University of Prishtina — vullnet.laniku@uni-pr.edu

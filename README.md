@@ -16,6 +16,14 @@ Journal, 2026).
   baseline (BLUP).
 - `data/measured_link_params.json` — all fitted link-model parameters
   (SF fixed effects, ICC, variances, hold-out RMSEs), device keys pseudonymized.
+- `data/fleet_daily_link_metrics.json` — daily aggregated link metrics (rx packets,
+  mean SNR/RSSI, packets per data rate) for the full 2,033-device fleet, May–July
+  2026, harvested from the network server with RWSCP's permission. Devices D01–D59
+  are the analyzed meters (same pseudonyms as the readings CSV); D60+ are the
+  remaining first-vendor devices; T0001+ are the second-vendor (device-side-ADR)
+  expansion. Supports the within-deployment natural experiment and the
+  calendar-time drift curve (`code/fleet_metrics_analysis.py`,
+  `results/drift_curve.json`).
 - `code/` — analysis pipeline: measured link model, pre-registered replay
   apparatus (`full_replay.py`), pilot gates, live-PPO cross-check, LoED external
   replication, figure scripts. `code/allocator/` is the vehicle allocator
@@ -47,7 +55,7 @@ Journal, 2026).
 Python 3.12; `pip install -r requirements.txt`.
 
 ## License
-Code: MIT (see LICENSE). Derived data (`data/`): CC BY 4.0. Deployment data released with permission of the Regional Water Supply Company Prishtina (RWSCP).
+Code: MIT. Derived data: CC BY 4.0.
 
 ## Contact
 Vullnet Laniku, University of Prishtina — vullnet.laniku@uni-pr.edu
