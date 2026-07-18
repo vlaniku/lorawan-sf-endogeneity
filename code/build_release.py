@@ -151,10 +151,13 @@ def main():
 
 README = """# The Spreading Factor Is Not Channel State — code & derived data release
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21431851.svg)](https://doi.org/10.5281/zenodo.21431851)
+
 Companion release for: V. Laniku and B. Krasniqi, "The Spreading Factor Is Not
 Channel State: Endogenous Link Proxies and the Cost of Device-Homogeneity in
 ISAC-Enabled IoT Resource Allocation" (submitted to IEEE Internet of Things
-Journal, 2026).
+Journal, 2026). Archived: DOI 10.5281/zenodo.21431851 (this version);
+10.5281/zenodo.21431850 (all versions).
 
 ## Contents
 - `data/rwscp_link_readings.csv` — pseudonymized radio-layer readings from the
